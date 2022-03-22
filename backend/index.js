@@ -14,17 +14,11 @@ const typeDefs = gql`
     allUsers: [User]
   }
   type Mutation{
-    addUser(newUser: UserInput):User
+    addUser(name:String,age:Int,job:String,gender:String):User
     deleteUser(id:Int):Boolean
-    updateUser(updateUser: UserInput):User
+    updateUser(name:String,age:Int,job:String,gender:String):User
   }
 
-  input UserInput{
-   name:String,
-   age:Int,
-   job:String,
-   gender:String
-  }
 `;
 
 

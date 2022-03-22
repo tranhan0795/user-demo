@@ -1,7 +1,7 @@
 import {useQuery, gql} from "@apollo/client";
 import SingleUser from "./SingleUser";
 
-const GET_ALL_USERS = gql`
+export const GET_ALL_USERS = gql`
 query Users{
     allUsers{
         id,
@@ -21,8 +21,8 @@ const UsersList = () => {
     if (loading) return 'Loading...';
     console.log(data);
     return (
-        <div className="mt-8 flex items-center">
-            <table className="table-auto max-w-[768px] w-full text-center border border-slate-500 ">
+        <div className="mt-8 flex items-center ">
+            <table className="table-auto max-w-[768px] w-full text-center border border-slate-500 p-5 mx-auto">
                 <thead>
                     <tr>
                         <th className="border border-slate-500">ID</th>
