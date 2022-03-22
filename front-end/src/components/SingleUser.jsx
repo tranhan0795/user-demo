@@ -51,7 +51,7 @@ const SingleUser = ({age, name, gender, job, id}) => {
         if (updateError) {
             alert("Error!! user has not been updated!!");
         }
-    }, [deleteError])
+    }, [updateError])
 
     const handleDelete = () => {
         if (!window.confirm("are you sure want to delete this user?")) {
