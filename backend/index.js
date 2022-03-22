@@ -16,7 +16,7 @@ const typeDefs = gql`
   type Mutation{
     addUser(name:String,age:Int,job:String,gender:String):User
     deleteUser(id:Int):Boolean
-    updateUser(name:String,age:Int,job:String,gender:String):User
+    updateUser(id:Int,name:String,age:Int,job:String,gender:String):User
   }
 
 `;
@@ -86,6 +86,7 @@ const resolvers = {
          * @param db - db connection
          */
         updateUser: async (_, {id, name, age, gender, job}, {db}) => {
+            console.log(id,name,age,gender)
             return new Promise((res, rej) => {
                 db.query(`UPDATE user SET name = ?,age = ?, gender = ?, job = ?  WHERE id = ?`, [name, age, gender, job, id], (err) => {
                     if (err) {
